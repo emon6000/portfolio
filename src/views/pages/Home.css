@@ -1,0 +1,520 @@
+.home-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  margin-bottom: 5rem;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-greeting {
+  font-family: "Space Mono", monospace;
+  color: #a855f7;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  font-size: 4.5rem; /* Keep your name massive */
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  font-size: 3rem; /* Shrunk from 4.5rem */
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-role-secondary {
+  font-size: 3rem; /* Shrunk from 4.5rem */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  color: #888;
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+/* ==========================================
+   HERO IMAGE & PULSE ANIMATION
+   ========================================== */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* Initial Glow */
+  box-shadow:
+    -20px 0 60px rgba(168, 85, 247, 0.15),
+    20px 0 60px rgba(59, 130, 246, 0.15);
+
+  /* 1-second pulse effect */
+  animation: pulse-glow 1s infinite ease-in-out;
+  transition: box-shadow 0.4s ease;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.1) saturate(0.8);
+  /* Pulsing the brightness too */
+  animation: pulse-brightness 1s infinite ease-in-out;
+  transition: filter 0.5s ease;
+}
+
+.image-wrapper:hover,
+.image-wrapper:hover .profile-img {
+  animation-play-state: paused; /* Pause pulsing when user hovers */
+}
+
+.image-wrapper:hover {
+  box-shadow:
+    -25px 0 80px rgba(168, 85, 247, 0.35),
+    25px 0 80px rgba(59, 130, 246, 0.35);
+}
+
+.image-wrapper:hover .profile-img {
+  filter: brightness(0.9) contrast(1.2) saturate(1);
+}
+
+.neon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    45deg,
+    rgba(168, 85, 247, 0.1) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+}
+
+/* ==========================================
+   ANIMATION KEYFRAMES
+   ========================================== */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow:
+      -15px 0 45px rgba(168, 85, 247, 0.15),
+      15px 0 45px rgba(59, 130, 246, 0.15);
+  }
+  50% {
+    box-shadow:
+      -25px 0 70px rgba(168, 85, 247, 0.3),
+      25px 0 70px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@keyframes pulse-brightness {
+  0%,
+  100% {
+    filter: brightness(0.7) contrast(1.1);
+  }
+  50% {
+    filter: brightness(0.8) contrast(1.15);
+  }
+}
+
+/* ==========================================
+   SECTIONS & CARDS
+   ========================================== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-number {
+  font-family: "Space Mono", monospace;
+  color: #d946ef;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+/* ==========================================
+   PROJECT LIST VIEW & BUTTONS
+   ========================================== */
+.view-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.top-toggle {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  justify-content: flex-start;
+}
+
+.view-toggle-btn {
+  background: transparent;
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-toggle-btn:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: #a855f7;
+  transform: translateY(-2px);
+}
+
+.list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.list-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #111 0%, #0a0a0a 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: border-color 0.3s;
+}
+
+.list-card:hover {
+  border-color: #3b82f6;
+}
+
+.list-card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.list-card-content p {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.list-tech {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.list-tech span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.explore-list-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.explore-list-btn:hover {
+  color: #3b82f6;
+}
+
+/* ==========================================
+   CP & SKILLS SECTIONS
+   ========================================== */
+.cp-section,
+.skills-section {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+.cp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cp-card {
+  background: linear-gradient(180deg, #161616 0%, #0a0a0a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.cp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.cp-icon {
+  font-size: 2rem;
+}
+.leetcode-icon {
+  color: #ffa116;
+}
+.cf-icon {
+  color: #1f8acb;
+}
+.cp-card-header h3 {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.cp-handle {
+  color: #888;
+  font-family: "Space Mono", monospace;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.cp-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.cp-stats {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.cp-focus {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.cp-focus span {
+  color: #a855f7;
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.skill-card {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+}
+.skill-card h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: "Space Mono", monospace;
+}
+.skill-card p {
+  color: #888;
+  line-height: 1.5;
+}
+
+.contact-section {
+  margin-bottom: 8rem;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-form input,
+.contact-form textarea {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  border-radius: 8px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #a855f7;
+}
+.submit-btn {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 8px;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS (Final Fix)
+   ========================================== */
+@media (max-width: 850px) {
+  /* Hero Section: Smaller, tighter image */
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem; /* Tighter gap */
+    margin-top: 0; /* Align with top */
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-top: 1rem; /* Space under the image */
+  }
+
+  /* Shrink the massive hero text */
+  /* Mobile Typography Hierarchy */
+  .hero-name {
+    font-size: 2.4rem;
+  }
+
+  .hero-role,
+  .hero-role-secondary {
+    font-size: 1.8rem; /* Smaller roles on mobile */
+  }
+
+  .hero-greeting {
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-description {
+    font-size: 0.85rem;
+    margin: 0 auto;
+  }
+
+  /* Fix: Image size reduction */
+  .hero-image-container {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem; /* Space under image */
+  }
+
+  .image-wrapper {
+    width: 250px; /* Reduced width */
+    height: 300px; /* Reduced height */
+    max-width: 90%; /* For extremely narrow screens */
+    margin: 0 auto;
+    border-radius: 12px; /* Subtler corner radius */
+  }
+
+  /* List View Mobile Adjustments */
+  .list-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .top-toggle {
+    justify-content: center;
+  }
+
+  /* All grids become single-column */
+  .cp-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Reduce vertical card space */
+  .cp-card,
+  .skill-card {
+    padding: 1rem 1.2rem;
+  }
+
+  .cp-card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1rem;
+  }
+}
