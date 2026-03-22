@@ -29,7 +29,7 @@ export const portfolioData = {
     {
       id: 3,
       title: 'Pothik Bondhu',
-      tech: 'PERN Stack (PostGIS, Socket.io)',
+      tech: 'PERN Stack',
       description:
         'A secure social travel marketplace that connects users for shared journeys using exact spatial radius matching and verified profiles.',
       details:
