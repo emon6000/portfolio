@@ -52,6 +52,17 @@ export const portfolioData = {
       githubUrl: 'https://github.com/emon6000/GithubIdFinder',
       liveUrl: 'https://githubuserfinder-delta.vercel.app/',
     },
+    {
+      id: 5,
+      title: 'ema-john-react',
+      tech: 'React',
+      description: 'Simple frontend react project',
+      details: 'Made with REACT',
+      image:
+        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800&h=450',
+      githubUrl: 'https://github.com/emon6000/emajohn-react',
+      liveUrl: 'https://emajohn-react.vercel.app/',
+    },
   ],
   competitiveProgramming: [
     {
