@@ -74,6 +74,17 @@ export const portfolioData = {
       githubUrl: 'https://github.com/emon6000/restcountries',
       liveUrl: 'https://restcountries-olive.vercel.app/',
     },
+    {
+      id: 7,
+      title: 'PokeAPI Uses',
+      tech: 'React',
+      description: 'Simple frontend react project',
+      details: "PokeDesk Tracker ⚡️A responsive React application that interfaces with the PokeAPI https : //pokeapi.co/ to browse, search, and catalog your favorite Pokémon.🚀 Features Dynamic Listing:   Fetches and displays Pokémon data in real-time.Detailed Views:   In-depth stats, types, and abilities for every Pokémon.Favorites System:   Save your preferred Pokémon to a personalized list.Persistent Storage: Uses Local Storage to ensure your favorites survive page refreshes",
+      image :
+        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800&h=450',
+      githubUrl: 'https://github.com/emon6000/Pokedesk',
+      liveUrl: 'https://pokedesk-eight.vercel.app/',
+    },
   ],
   competitiveProgramming: [
     {
